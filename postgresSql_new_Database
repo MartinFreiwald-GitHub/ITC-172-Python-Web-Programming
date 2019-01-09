@@ -1,0 +1,29 @@
+# inside the visualstudio code app.
+
+# After you install first inside of PhpPgAdmin. 
+
+# Create databases using the postgreSQL link tree link.  Go in here create database and name it 
+
+# techreviewdb and make an other  database called pythonclub
+
+# now, toggle on a terminal in visualstudio code, and use the file tree in Djangoproject directory and select now techreview2.  Select the code in the script now called databases below and change ---->
+
+
+
+# DATABASES = {
+# 'default': {
+# 'ENGINE': 'django.db.backends.postgresql_psycopg2',
+# 'NAME': 'techreviewdb',
+# 'USER' : 'postgres',
+# 'PASSWORD': 'P@ssw0rd1',
+# 'HOST': 'localhost',
+# 'POST' : '',
+# }
+# }
+
+
+
+  # 33  python3 manage.py migrate
+  # 34  pip install psycopg2
+  # 35  python3 manage.py migrate
+
