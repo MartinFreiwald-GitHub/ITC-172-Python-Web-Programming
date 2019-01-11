@@ -1,0 +1,176 @@
+# make a directory in your home directory called martin. 
+
+# Cd into martin.
+
+# make director called djangonproject in martin directory.  mkdir djangoproject.
+
+# pwd
+
+# ls 
+
+# cd djangoproject
+
+# make a Virtural environment directory in djangoproject call it "venv". 
+
+# cd back to djangoproject, cd .. 
+
+# ls
+
+# pwd
+
+# In djangoproject directory use command, source venv/bin/activate
+
+# In djangoproject directory use command, django-admin startproject techreview2
+
+# cd into techreview2.
+
+# ls
+
+# pwd
+
+# your directory should be (venv)martin:~/djangoproject/techreview2/$
+
+# from (venv)martin:~/djangoproject/techreview2/$ use command, python3 manage.py startapp techapp
+
+# cd back to techrewiew2 cd ..
+
+# pwd 
+
+# in techreview2 type tree
+
+# the tree shows techreview2 as the begining folder then manage.py icon, techapp folder and techreview2 as the inner folder.  Techapp folder should have admin.py, app.py, _init_.py then a Migrations folder, followed by models.py, tests.py and views.py.  Mirgrations folder will have _init_.py.
+
+# The inner techreview2 folder will have _init_.py, pycache_, settings.py, urls.py, wsgi.py.  The pycache_ will have _init_cpython.36.pyc and settings.cpython.36.pyc
+
+# open visual studio code.  goto open file open folder djangoproject and open techreview2.
+
+# Now, go into the inner techreview2 folder and select settings.  scroll to INSTALLED_APPS = [,  at the bottom of the '' single quoted string add new string 'tech' and under the DATABASES = [ and change to, 
+# DATABASES = [
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql_psycop2',
+#        'NAME' : 'techreview2',
+#        'USER' : 'postgres',
+#        'PASSWORD' : 'P@ssw0rd1',
+#        'HOST' : 'localhost'
+#        'PORT' : '',
+#    }
+# }
+
+# please pay attention to case letters in database variables that they match your directories in linux directory tree.
+# In your visual studio code tree under inner techreview2 select url.py.
+
+# under the urlpatterns = [ type in this,
+# as; 
+# urlpatterns = [ 
+#   path{'admin/', admin.site.urls},
+#    path{'techapps/', include{'techapp.urls'}],
+# ]
+
+# save all.  if not you get a include error techapp.urls.
+
+# this code redirects paths to look for techapp.
+
+# there are no new files in tech.  add an new file: urls.py.  Go inside of this at top of a clean editor.  Type on line 1 import from django.urls path on line 2 hit return on line 3 type urlpatterns = [ 
+
+# ]
+# exit and save.
+
+# Now, goto linux os select firefox browser and open the phpPgadmin application.  select the PostgresSQL link and open it create a database call it techreviewdb and with cursor mouse over Template window second desc inline with name draw down bar and select template0 from window. Now create it button.
+
+
+# goto the header bar and goto terminal to open terminal in visual studio code.  Your directory should be (venv)martin:~/djangoproject/techreview2/$
+# cd .. back to /djangoproject.
+
+# in /djangoproject type source venv/bin/activate
+
+# this command will complile code for your change to the database added.
+
+# Now, in visual studio code terminal, cd techreview2.
+
+# pwd
+
+# in techreview2 type pip install psycopg2
+
+# if you get an, include, error go back above to url.py in the editor redo the urlpatterns = [ code here again.
+
+# Now, goto tech select views.py in the editor type on line 4.
+
+# def index(request):
+#    return render(request, 'tech/index.html')
+
+# save all.
+
+# Now, goto urls.py within tech. Inside of urlpatterns add 
+# import from . views 
+# on line 2 of this page.  Then on line 6 below in urlspatterns add to path as
+
+# from django.urls import path
+# from , import views
+# urlpatterns = [
+# path{'', views.index, name='index'}
+# ]
+
+# Now, goto tech and add folder call it templates.  This where the html will go in the future.
+
+# Inside of templates.  Add a new folder call it tech after tech in techreview2.
+
+# Now, goto templates folder in tech and add new file called base.html and save.
+ 
+# Now, goto the Canvas and for ITC-172 select the pages tab and select the html link.  Copy the html code and paste it into the base.html from visual studio code editor. 
+
+# Save it.
+
+# Change the code in the new base.html goto tag called <title> change to <title>Tech Reviews</title> and on line 11 <h1> change to <h1>Tech Reviews</h1>.
+
+# Now, go inside the tech folder you just made and add a file call it index.html
+
+# Now go into the index.html and on line 1 type 
+# {% extends 'base.html %}
+
+#{% block content %}
+# <h2>Tech Reviews</h2>
+# <p>Welcome to the web site where everyting tech is reviewed</p>
+# <p>Still under construction</p>
+
+# {% endblock%}
+
+# Now, in browser type this as
+# http://127.0.0.1:8000/tech
+
+# you should see Tech Reviews web page.  
+
+# after this.
+
+# in terminal of visual sudio code having a directory of
+# (venv)martin:~/djangoproject/techreview2/$ 
+# type, python3 manage.py migrate
+
+# Now,  open the phpPgadmin application click on the techreviewdb link.  To see all the tables you have now. 
+
+
+
+# This is the review of what was acomplished here,
+
+# set up the project 
+# adjusted the settings
+# within setting, we coded this, 
+# 1.  created directory, tech and added to installed apps
+# 2.  changed the database to postgres
+# 3. downloaded psycopg2
+# 4.  in the project urls added include and redirected to the app level url.
+# 5.  in the app level urls we inported views and added a view called index.  
+# 6.  Within views created that index.
+# 7.  Index.py added a request to tech/index.html.
+# 8.  Inside tech directory add folder called templates and inside this we added file called base.html.  This will be the basis for all the web pages here.  Uses bootstrap and it has block content.
+# 9.  In the index.html it does extends base.html it has a content area we did a little sql html inside of that and allows us to run the server and see the web page. 
+# 10.  Then closed out the server with a ctrl-c command.  That being the web # page. 
+# 11.  Finally, applied the migration to the directory techreview2 in the # visual studio code terminal.
+
+
+
+
+
+ 
+
+
+
