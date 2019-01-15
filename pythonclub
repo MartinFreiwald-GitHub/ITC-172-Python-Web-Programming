@@ -1,8 +1,8 @@
- #  mkdir Djangoprojects
- #  cd ~/Djangoprojects
+ #  mkdir djangoprojects
+ #  cd ~/djangoprojects
  #  ls
+ #  source venv/bin/activate
  #  Python3 -m venv venv
  # ls
- #  source venv/bin/activate
  #  pip install django
-# django-admin startproject pythonclubproject
+# django-admin startproject pythonclub
