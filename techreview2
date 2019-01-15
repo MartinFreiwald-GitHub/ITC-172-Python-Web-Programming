@@ -1,0 +1,9 @@
+ #  mkdir djangoprojects
+ #  cd ~/djangoprojects
+ #  ls
+ #  source venv/bin/activate
+ #  Python3 -m venv venv
+ # ls
+ #  pip install django
+# django-admin startproject techreview2
+# ls
