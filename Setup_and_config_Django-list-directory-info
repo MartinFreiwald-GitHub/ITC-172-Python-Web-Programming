@@ -1,0 +1,24 @@
+# Setup and Configure Django --steps
+
+# The first two assignments involved a lot of steps, so I though it might be useful to list them. Most of these steps only need to be done once. Also I want to reiterate that the tech review project and app are the in-class examples, the assignments are all with the python club project and app.
+
+# Initial set up
+# Create a directory for the django projects
+# Install django into that directory
+# Install venv, the virtual environment
+# Activate the virtual environment
+# Create the project techreviews
+# change directory into techreviews and start the app tech
+# (do the same two steps with pythonclub)
+# Configuration
+# Create the techreviewdb in pgadmin (also create pythonclubdb)
+# Open VSCode, Open a folder to the outermost techteview folder
+# Also open a terminal in VSCode
+# Open the settings.py file in the project folder.
+# In the settings.py file add 'tech' to the registered apps list.
+# Also in the settings.py change the database to postgresql_psycopg2.
+# You will need to install psycopg2 using pip, using the terminal in VSCode
+# Migrate the databases
+# In the project lever urls.py add an include that points to the app's url
+# Add a urls.py file to the app directory
+# At this point you will have completed the setup and configuration
