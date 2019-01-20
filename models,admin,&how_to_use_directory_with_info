@@ -1,0 +1,122 @@
+# In the techreveiw2 directory.  We change the 
+# settings.py 
+# and the urls.py.
+
+# The outer folders are pythonclub and techreveiw2.
+
+# To exit the virtural environment just exit the linux terminal. Now re-enter it and cd to your home directory and your djangoprojects directory.
+
+# If you have the virtural environment you have the django application package loaded.
+
+# pythonclub is for assignments.
+
+# python frameworks to talk to the databases.  And the CRUD.  
+
+# This creates a Database layer between you and the database, that talks to the database from python.
+
+# spconger github then repositories link then techreview2 is every thing we did in class.
+
+# in techreview2 in settings.py change database as before.
+
+# in techreview2 in urls.py change urlpatterns = [
+# path ('admin/', admin.site.urls),
+# path('techapp/', include('techapp.urls')),
+# ]
+  
+
+# models.py is 
+# found in github spconger Tech-Review-Django/techreviews/reviews/models.py
+
+# ReadingAPP is a django sample. in github.
+
+# django girls that make an app.
+
+# click on models.py in techapp.  type on line 1.
+# from django.db import models
+# from django.contrib.auth.models import User
+
+# Create your models here.
+# producttype, product, review#
+
+# class ProductType(models.Model):
+#    typename=models.charField(max_length=255)
+# productdescription=models.CharField(max_length=255, null=True, blank=True)
+
+# def_ string_(self):
+#    return self.typename
+    
+# class Meta:
+#    db_table='producttype'
+
+# class Product(models.Model):
+#   productname=modles.CharField(max_lenght=255)
+#   producttype=models.ForeignKey(ProductType), on_delete=models.DO_NOTHING)
+# user=models.ForeignKey(User, ON_DELETE=models.DO_NOTHING)
+# productentrydate=models.DateField()
+# producturl=models.URLField(null=True, blank=True)
+# productdescription=models.TextField()
+
+# def _str_(self):
+#   return self.productname
+
+# class Meta:
+#    db_table='product'
+
+# Class Review(models.Model):
+#  reviewtitle=models.CharField(max_length=255)
+# reviewdate=models.DateField()
+# product=models.ForeignKey(Product, on_delete=models.CASCADE)
+# user=models.ManyToManyField(User)
+# reviewrating=models.SmallIntegerField()
+# reviewtext=models.TextField()
+
+# def _str_(self):
+#   return self.reviewtitle
+
+# class Meta:
+#   db_table='review'
+
+# save this as our model.py
+
+
+# djangoprojects$ source venv1/bin/activate
+# cd techreview2
+
+# djangoprojects/techreview2$python3 manage.py makemigrations
+
+# you should get the -create model Product, -create model ProductType, -create model Review, -Add field producttype to product, -Add field user to product.
+
+# Now, switch to admin.py in same directory as models.py.  type this.
+
+# from django.contrib imprt admin
+# from .models import ProductType, Product, Review
+
+#  #Register your models here.
+# admin.site.register(ProductType)
+# admin.site.register(Product)
+# admin.site.register(Review)
+
+#  #save file
+
+# Now, in terminal of visual studio code on techreview2 directory.
+
+# type python3 manage.py createsuperuser
+
+# asks for email but doesnt use it make a password and keep it on you.  YOU need the password or its all no good.
+
+# message will say "superuser created successfully."
+
+# Now, type python3 mangage.py runserver
+
+# goto browser type 127.0.0.1:8000/admin 
+
+# you should get a Django login.
+
+# lets you in you can edit.  Users and Groups, producttypes, 
+
+# For this class there are three steps create a view.py create a template and add a url.py
+
+# we are building one app and all assignments are using that app.  Just adding to that app.
+
+
+
