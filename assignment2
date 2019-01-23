@@ -1,0 +1,6 @@
+# Add a database called "pythonclub" to PostgreSQL. Configure the Django 
+# settings to add "club" to the app list and to make PostgreSQL with python club 
+# your default database. Edit the URL in the pythonclub folder to import the URLS from 
+# the club folder. Add a urls.py file to the club folder. Migrate the database.
+
+# Upload to GitHub and post the url for the assignment
