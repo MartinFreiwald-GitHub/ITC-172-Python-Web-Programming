@@ -1,0 +1,7 @@
+# This is my path naming convention for this below --
+# ITC-172-Python-Web-Programming/tech_review_commits/review/templates/reviews/
+
+# The orginal path read like is in comparasion below--
+# Tech-Review-Django/techreviews/reviews/templates/reviews/
+
+# django file are in .py form after the file name.
