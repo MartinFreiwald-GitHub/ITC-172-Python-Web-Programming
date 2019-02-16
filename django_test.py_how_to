@@ -1,0 +1,88 @@
+Testing one
+Testing is a key part of any programming. The point of testing is to make sure everything 
+behaves as it should under a variety of inputs and conditions. Django has built in unit testing tools. 
+You might have noticed the tests.py file in the app section. We are going to add a couple of tests. 
+You should note that we are not doing comprehensive testing, just showing how the testing works. 
+
+First we will do some simple tests of the models. These are from Tech-Review_Django on GitHub 
+(https://github.com/spconger/Tech-Review-Django/blob/master/techreviews/reviews/tests.py 
+(Links to an external site.)Links to an external site. ) 
+
+rom django.test import TestCase
+from .models import TechProduct, TechType, TechReview
+from .forms import TechProductForm, TechReviewForm
+from datetime import datetime
+from django.urls import reverse
+
+# Create your tests here.
+# model tests
+
+class TechProductTest(TestCase):
+    def test_stringOutput(self):
+        techproduct=TechProduct(productname='Lenovo Laptop')
+        self.assertEqual(str(techproduct), techproduct.productname)
+
+    def test_tablename(self):
+        self.assertEqual(str(TechProduct._meta.db_table), 'techproduct')
+
+class TechTypeTest(TestCase):
+    def test_stringOutput(self):
+        techtype=TechType(typename='Laptop')
+        self.assertEqual(str(techtype), techtype.typename)
+
+    def test_tablename(self):
+        self.assertEqual(str(TechType._meta.db_table), 'techtype')
+
+class TechReviewTest(TestCase):
+    def test_stringOutput(self):
+        techreview=TechReview(reviewtitle='Lenovo Laptop')
+        self.assertEqual(str(techreview), techreview.reviewtitle)
+
+    def test_tablename(self):
+        self.assertEqual(str(TechReview._meta.db_table), 'techreview')
+
+
+First note the imports. The test library contains the tools for unit tests. We also need to import our models.
+
+Tests are classes that inherit from TestCase. Inside the class we write functions to test the our model classes. Functions that are going to be actual tests need to start with the word "test_".  You can have other functions that are not actual tests which do things like set up the data to be tested. The tests I have included are very simple and not all that significant. The first function test_stringOutput() tests whether the def __str__() function puts out the expected string. The next test function tests the name of the database table. I did these same two tests for the other model classes.
+
+Here are a couple of tests for Views:
+
+class TestIndex(TestCase):
+    
+    def test_view_url_accessible_by_name(self):
+        response = self.client.get(reverse('index'))
+        self.assertEqual(response.status_code, 200)
+        
+    def test_view_uses_correct_template(self):
+        response = self.client.get(reverse('index'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'reviews/index.html')
+
+class TestGetProduct(TestCase):
+
+
+    def test_view_url_exists_at_desired_location(self):
+        response = self.client.get('/reviews/products')
+        self.assertEqual(response.status_code, 200)
+
+    def test_view_url_accessible_by_name(self):
+        response = self.client.get(reverse('getProducts'))
+        self.assertEqual(response.status_code, 200)
+        
+    def test_view_uses_correct_template(self):
+        response = self.client.get(reverse('getProducts'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'reviews/products.html')
+
+
+Again they don't test much that is significant. They test if the URL is correct and 
+if it is using the right template. Status code 200 means that the request was OK. Here 
+is a link to a page on Django status codes: https://www.django-rest-framework.org/api-guide/status-codes/ 
+(Links to an external site.)Links to an external site.
+
+You run tests with manage.py. The full command is:
+
+python3 manage.py test
+
+It should run all the tests and tell you if they pass or fail.
