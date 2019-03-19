@@ -1,0 +1,77 @@
+from django.test import TestCase
+from .models import Product, ProductType
+from django.urls import reverse
+
+# Create your tests here.
+
+class ProductTest(TestCase):
+   def test_stringOutput(self):
+      product=Product(productname='Best Foods Mayonnaise')
+      self.assertEqual(str(product), product.productname)
+
+   def test_tablename(self):
+       self.assertEqual(str(Product.meta.db_table), 'product')
+
+# // testing a view
+class TestIndex(TestCase):
+   def test_url_accessible_by_name(self):
+       response=self.client.get(reverse('index')) 
+       self.assertEqual(response.status_code, 200)
+
+def test_view_uses_correct_template(self):
+    response=self.client.get(reverse('index'))
+    self.assertTemplateUsed(reponse, 'calorieapp/index.html')
+  
+  
+  ## ------------------EOF------------------------------------------------------------------   
+    
+ ## Here is another test
+ 
+ from django.test import TestCase
+from .models import Product, ProductType
+from django.urls import reverse
+
+# Create your tests here.
+
+class ProductTest(TestCase):
+   def test_stringOutput(self):
+      product=Product(productname='diet Coke')
+      self.assertEqual(str(product), product.productname)
+
+   def test_tablename(self):
+       self.assertEqual(str(Product.meta.db_table), 'product')
+
+# // testing a view
+class TestIndex(TestCase):
+   def test_url_accessible_by_name(self):
+       response=self.client.get(reverse('index')) 
+       self.assertEqual(response.status_code, 200)
+
+def test_view_uses_correct_template(self):
+    response=self.client.get(reverse('index'))
+    self.assertTemplateUsed(reponse, 'calorieapp/index.html')
+    
+## ------------------EOF------------------------------------------------------------------   
+    
+    ## This is how the test is conducted below using the Visual Studio Code editor terminal.
+  
+steve@wtr19:~/djangoprojects$ source venv1/bin/activate
+(venv1) steve@wtr19:~/djangoprojects/caloriesupdated$ cd caloriesupdated
+
+(venv1) steve@wtr19:~/djangoprojects/caloriesupdated$ ls 
+calorieapp caloriesupdated 
+
+(venv1) steve@wtr19:~/djangoprojects/caloriesupdated$ python3 manage.py makemigrations  
+    
+(venv1) steve@wtr19:~/djangoprojects/caloriesupdated$ Python3 manage.py migrate
+
+Should see no errors 
+
+next , 
+(venv1) steve@wtr19:~/djangoprojects/caloriesupdated$ python3 manage.py runserver
+
+
+In browser type path http//127.0.0.1:8000/calorieapp/
+
+Press return.
+
